@@ -1,0 +1,71 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:lts
+    working_directory: ~/project
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run:
+          name: Install local dependencies
+          command: npm install
+      # Cache local dependencies if they don't exist
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      #- run:
+      #    name: Testing
+      #    command: npm run test
+      - run:
+          name: Building
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "production" ]; then
+                npm run build
+            elif [ "${CIRCLE_BRANCH}" == "development" ]; then
+                npm run build
+            fi
+      # Cache the dist folder for the deploy job
+      - save_cache:
+          key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - dist
+  deploy:
+    working_directory: ~/project
+    docker:
+      - image: circleci/node:lts-browsers
+    steps:
+      - restore_cache:
+          key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+      - run:
+          name: Install Surge CLI
+          command: sudo npm install --global surge
+      - run:
+          name: Deploy to Surge Domain
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "development" ]; then
+                surge --project dist/ --domain lab365-fullstack-js-app.surge.sh
+            fi
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - development

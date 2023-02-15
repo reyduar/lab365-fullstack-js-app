@@ -1,0 +1,90 @@
+/* Usado para importar regras de estilo de outras folhas de
+
+estilo. */
+
+@import "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap";
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+* {
+  /* Este seletor escolhe todos os elementos do documento e
+
+redefine todas as configurações do navegador. */
+  margin: 0;
+  padding: 0px;
+  padding-top: 0px;
+  border: 0;
+  font-size: 100%;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  vertical-align: baseline;
+  text-decoration: none;
+  list-style: none;
+  background-color: #625d5d;
+}
+
+#footer-logo {
+  width: 8rem !important;
+  margin-right: 5rem;
+  background-color: #98afc7 !important;
+}
+
+.linha {
+  display: flex;
+  flex-direction: row;
+}
+
+.collection.with-header .collection-header {
+  background-color: #000000 !important;
+}
+
+nav {
+  background-color: #000000 !important;
+  padding-top: 5px;
+}
+
+header nav ul li {
+  display: inline-block;
+}
+
+header nav ul li a {
+  margin: 0px 15px;
+  font-size: 17px;
+  font-weight: 900;
+  color: #98afc7;
+}
+
+.links > ul {
+  background-color: #98afc7 !important;
+}
+
+footer {
+  background-color: #98afc7 !important;
+}
+
+footer div {
+  background-color: #98afc7 !important;
+}
+
+footer ul li a {
+  text-decoration: #98afc7;
+  background-color: #98afc7;
+}
+
+footer ul li {
+  background-color: #98afc7;
+  margin: 0 10px 5px 5px;
+}
+
+footer ul li a img {
+  background-color: #98afc7;
+  width: 30px;
+}
