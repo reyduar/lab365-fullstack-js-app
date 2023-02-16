@@ -1,2 +1,2 @@
 import "./styles.css";
-import "./js/navegador.component";
+import "./components/header/header.js";
