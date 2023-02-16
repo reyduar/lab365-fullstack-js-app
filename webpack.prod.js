@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPartialsPlugin = require("html-webpack-partials-plugin");
+const ExtraWatchWebpackPlugin = require("extra-watch-webpack-plugin");
 const HtmlWebpack = require("html-webpack-plugin");
 const MiniCssExtract = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
@@ -11,6 +12,10 @@ module.exports = {
   output: {
     clean: true,
     filename: "main.[contenthash].js",
+  },
+
+  devServer: {
+    liveReload: true,
   },
 
   module: {
@@ -53,6 +58,10 @@ module.exports = {
     new HtmlWebpack({
       title: "Index",
       template: "./src/index.html",
+    }),
+
+    new ExtraWatchWebpackPlugin({
+      dirs: [path.join(__dirname, "src")],
     }),
 
     new HtmlWebpackPartialsPlugin({
