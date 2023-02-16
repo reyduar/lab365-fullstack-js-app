@@ -14,10 +14,6 @@ module.exports = {
     filename: "main.[contenthash].js",
   },
 
-  devServer: {
-    liveReload: true,
-  },
-
   module: {
     rules: [
       {
