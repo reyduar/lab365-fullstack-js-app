@@ -1,3 +1,4 @@
+import "../node_modules/materialize-css/dist/js/materialize.min";
 import "./styles.css";
 import "./components/header/header";
 import "./pages/home/home";

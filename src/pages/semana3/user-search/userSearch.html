@@ -1,11 +1,20 @@
-<h5 class="header center orange-text">
+<h4 class="header center orange-text">
   [M1S03] Ex 1 - Buscador de Usuário por username
-</h5>
-
+</h4>
+<br /><br />
 <div class="row">
-  <div class="input-field col s10">
+  <div class="input-field col s9">
     <input id="inputSearch" type="text" />
-    <label class="active" for="inputSearch">Ingrese el nombre de usuario</label>
+    <label class="active" for="inputSearch">Insira nome de usuário*</label>
+  </div>
+  <div class="col s1">
+    <button
+      id="clearButton"
+      class="btn-floating waves-teal btn-flat"
+      type="button"
+    >
+      <i class="material-icons left">clear</i>
+    </button>
   </div>
   <div class="col s2">
     <button
@@ -17,6 +26,7 @@
       <i class="material-icons left">search</i>
     </button>
   </div>
+
   <div class="col s12">
     <div id="userTable"></div>
   </div>

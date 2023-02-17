@@ -1,6 +1,7 @@
 import users from "../../../data/users.json" assert { type: "json" };
 const inputSearch = document.getElementById("inputSearch");
 const searchButton = document.getElementById("searchButton");
+const clearButton = document.getElementById("clearButton");
 let keywords = "";
 
 const getUsername = (e) => (keywords = e.target.value);
@@ -16,7 +17,6 @@ const searchUserByName = () => {
 };
 
 const renderTableWithUsers = (users) => {
-  inputSearch.focus();
   let tableBody = "";
   users.forEach((item) => {
     tableBody += `
@@ -54,6 +54,14 @@ const renderTableWithUsers = (users) => {
   tableContent.innerHTML = tableHtml;
 };
 
+const init = () => {
+  inputSearch.value = "";
+  inputSearch.focus();
+  renderTableWithUsers(users);
+};
+
 inputSearch.addEventListener("change", getUsername);
 searchButton.addEventListener("click", searchUserByName);
-renderTableWithUsers(users);
+clearButton.addEventListener("click", init);
+
+init();
