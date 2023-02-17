@@ -1,9 +1,8 @@
 @import "../node_modules/materialize-css/dist/css/materialize.min.css";
 @import "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap";
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
 body {
-  background-color: #625d5d;
+  background-color: #d3d3d3;
 }
 
 #footer-logo {

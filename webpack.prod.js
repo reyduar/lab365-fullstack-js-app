@@ -47,10 +47,6 @@ module.exports = {
       jQuery: "jquery",
     }),
 
-    new webpack.ProvidePlugin({
-      materialize: "materialize",
-    }),
-
     new HtmlWebpack({
       title: "Index",
       template: "./src/index.html",
