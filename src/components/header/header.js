@@ -3,7 +3,8 @@ const navSemana3 = document.querySelector("#semana3");
 
 const home = document.querySelector("#homeContent");
 const semana3Content = document.querySelector("#semana3Content");
-semana3Content.style.display = "none";
+home.style.display = "none";
+semana3Content.style.display = "block";
 
 // JS Events
 navHome.addEventListener("click", () => {
