@@ -4,13 +4,13 @@ const searchButton = document.getElementById("searchButton");
 const clearButton = document.getElementById("clearButton");
 let keywords = "";
 
-const getUsername = (e) => (keywords = e.target.value);
+const handleInputChange = (e) => (keywords = e.target.value);
 
-const searchUserByName = () => {
+const searchUserByUsername = () => {
   let usersList = users;
   if (keywords) {
-    usersList = usersList.filter((item) =>
-      item.username.toUpperCase().includes(keywords.toUpperCase())
+    usersList = users.filter(({ username }) =>
+      username.toUpperCase().includes(keywords.toUpperCase())
     );
   }
   renderTableWithUsers(usersList);
@@ -60,8 +60,8 @@ const init = () => {
   renderTableWithUsers(users);
 };
 
-inputSearch.addEventListener("change", getUsername);
-searchButton.addEventListener("click", searchUserByName);
+inputSearch.addEventListener("change", handleInputChange);
+searchButton.addEventListener("click", searchUserByUsername);
 clearButton.addEventListener("click", init);
 
 init();
