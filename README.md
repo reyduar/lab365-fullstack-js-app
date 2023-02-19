@@ -20,7 +20,7 @@ $ git pull origin development
 
 ### Demo
 
-https://reyduar.github.io/lab365-fullstack-js-app/
+https://arielduarte-fullstack-js.netlify.app/
 
 ### Autor
 

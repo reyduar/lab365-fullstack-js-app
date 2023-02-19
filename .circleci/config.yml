@@ -48,13 +48,10 @@ jobs:
       - restore_cache:
           key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
       - run:
-          name: Install Surge CLI
-          command: sudo npm install --global surge
-      - run:
-          name: Deploy to Surge Domain
+          name: Deploy to Netlify
           command: |
             if [ "${CIRCLE_BRANCH}" == "development" ]; then
-                surge --project dist/ --domain lab365-fullstack-js-app.surge.sh
+                ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=dist
             fi
 
 workflows:
