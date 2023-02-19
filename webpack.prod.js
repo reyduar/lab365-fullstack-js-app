@@ -33,7 +33,7 @@ module.exports = {
         use: [MiniCssExtract.loader, "css-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif)$/,
+        test: /\.(png|jpe?g|gif|ico)$/,
         loader: "file-loader",
       },
     ],
@@ -86,6 +86,15 @@ module.exports = {
         "./src/pages/semana3/user-search/userSearch.html"
       ),
       location: "userSearch",
+      template_filename: ["index.html"],
+    }),
+
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(
+        __dirname,
+        "./src/pages/semana3/whatsapp-link-gen/whatsappLinkGenerator.html"
+      ),
+      location: "whatsappLinkGenerator",
       template_filename: ["index.html"],
     }),
 
