@@ -20,7 +20,7 @@ $ git pull origin development
 
 ### Demo
 
-https://lab365-fullstack-js-app.surge.sh
+https://reyduar.github.io/lab365-fullstack-js-app/
 
 ### Autor
 
