@@ -1,0 +1,50 @@
+<h4 class="header center orange-text">[M1S03] Ex 3 - ToDo List</h4>
+<br /><br />
+<div class="row">
+  <div class="input-field col s9">
+    <input id="inputTaskName" type="text" />
+    <label class="active" for="inputTaskName"
+      >Insira o nome da tarefa diaria*</label
+    >
+    <div id="todoError"></div>
+  </div>
+  <div class="col s1">
+    <button
+      id="cancelButton"
+      class="btn-floating waves-teal btn-flat"
+      type="button"
+    >
+      <i class="material-icons left">clear</i>
+    </button>
+  </div>
+  <div class="col s2">
+    <button id="addButton" class="btn waves-effect waves-light" type="button">
+      Salvar
+      <i class="material-icons left">check</i>
+    </button>
+  </div>
+
+  <div class="col s12">
+    <h5 class="blue-grey-text text-darken-4">Lista de tarefas diárias</h5>
+    <div class="row">
+      <div class="input-field col s6">
+        <input id="inputTaskSearch" type="text" />
+        <label id="searchLabel" class="active" for="inputTaskSearch"
+          >Buscar tarefa</label
+        >
+      </div>
+      <div class="col s1">
+        <button
+          id="searchTaskButton"
+          class="btn-floating waves-teal btn-flat blue"
+          type="button"
+        >
+          <i class="material-icons left">search</i>
+        </button>
+      </div>
+      <div class="col s12">
+        <div id="todoTable"></div>
+      </div>
+    </div>
+  </div>
+</div>
