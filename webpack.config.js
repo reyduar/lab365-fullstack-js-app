@@ -98,6 +98,12 @@ module.exports = {
       template_filename: ["index.html"],
     }),
 
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, "./src/pages/semana3/todo-list/todoList.html"),
+      location: "todoList",
+      template_filename: ["index.html"],
+    }),
+
     new MiniCssExtract({
       filename: "[name].css",
       ignoreOrder: false,

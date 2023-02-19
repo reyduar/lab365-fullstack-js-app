@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:lts
-    working_directory: ~/project
+    working_directory: ~/repo
     steps:
       - checkout
       # Download and cache dependencies
@@ -23,7 +23,7 @@ jobs:
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
           paths:
-            - node_modules
+            - ./node_modules
       #- run:
       #    name: Testing
       #    command: npm run test
@@ -33,7 +33,7 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "production" ]; then
                 npm run build
             elif [ "${CIRCLE_BRANCH}" == "development" ]; then
-                npm run build
+                npm run build:dev
             fi
       # Cache the dist folder for the deploy job
       - save_cache:
@@ -41,20 +41,20 @@ jobs:
           paths:
             - dist
   deploy:
-    working_directory: ~/project
+    working_directory: ~/repo
     docker:
       - image: circleci/node:lts-browsers
     steps:
       - restore_cache:
           key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
       - run:
-          name: Install Surge CLI
-          command: sudo npm install --global surge
+          name: Install Netlify CLI
+          command: sudo npm install netlify-cli -g
       - run:
-          name: Deploy to Surge Domain
+          name: Deploy to Netlify
           command: |
             if [ "${CIRCLE_BRANCH}" == "development" ]; then
-                surge --project dist/ --domain lab365-fullstack-js-app.surge.sh
+                netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=dist
             fi
 
 workflows:
