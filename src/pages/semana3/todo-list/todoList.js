@@ -14,7 +14,6 @@ let editTodo = null;
 
 const resetInputs = () => {
   editTodo = null;
-  todoTable;
   inputTaskName.value = "";
   inputTaskSearch.value = "";
   inputTaskName.focus();
