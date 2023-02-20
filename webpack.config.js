@@ -122,6 +122,15 @@ module.exports = {
       template_filename: ["index.html"],
     }),
 
+    new HtmlWebpackPartialsPlugin({
+      path: path.join(
+        __dirname,
+        "./src/pages/semana3/rick-and-morty-card/rickAndMortyCard.html"
+      ),
+      location: "rickAndMortyCard",
+      template_filename: ["index.html"],
+    }),
+
     new MiniCssExtract({
       filename: "[name].css",
       ignoreOrder: false,
