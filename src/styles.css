@@ -16,6 +16,10 @@ body {
   flex-direction: row;
 }
 
+.profile-links > ul > li {
+  background-color: #ff9800 !important;
+}
+
 .links > ul {
   background-color: #98afc7 !important;
 }
