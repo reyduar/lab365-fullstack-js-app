@@ -1,9 +1,17 @@
 export class CaixaRegistradora {
-  #cliente = null;
-  #productos = [];
-  #caixaItems = [];
-  #dinheiro = 0;
-  #troco = 0;
+  #cliente;
+  #productos;
+  #caixaItems;
+  #dinheiro;
+  #troco;
+
+  constructor() {
+    this.#cliente = null;
+    this.#productos = [];
+    this.#caixaItems = [];
+    this.#dinheiro = 0;
+    this.#troco = 0;
+  }
 
   iniciarAtendimento(cliente) {
     this.#cliente = cliente;
