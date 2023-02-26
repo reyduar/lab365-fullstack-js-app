@@ -81,6 +81,12 @@ module.exports = {
     }),
 
     new HtmlWebpackPartialsPlugin({
+      path: path.join(__dirname, "./src/pages/semana4/semana4.html"),
+      location: "semana4",
+      template_filename: ["index.html"],
+    }),
+
+    new HtmlWebpackPartialsPlugin({
       path: path.join(
         __dirname,
         "./src/pages/semana3/user-search/userSearch.html"

@@ -7,3 +7,4 @@ import "./components/header/header";
 // JS pages
 import "./pages/home/home";
 import "./pages/semana3";
+import "./pages/semana4";
