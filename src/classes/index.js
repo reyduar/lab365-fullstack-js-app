@@ -6,3 +6,4 @@ export { ContaPoupanca } from "./conta-bancaria/contaPoupanca.class";
 export { ContaPoupancaPremium } from "./conta-bancaria/contaPremium.class.js";
 export { Person } from "./data-person/dataPerson.class";
 export { Profissao } from "./data-person/profissao.class";
+export { Estoque } from "./caixa-registradora-estoque/estoque.class";

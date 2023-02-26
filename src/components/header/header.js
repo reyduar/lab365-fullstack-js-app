@@ -5,9 +5,9 @@ const navSemana4 = document.querySelector("#semana4");
 const home = document.querySelector("#homeContent");
 const semana3Content = document.querySelector("#semana3Content");
 const semana4Content = document.querySelector("#semana4Content");
-home.style.display = "none";
+home.style.display = "block";
 semana3Content.style.display = "none";
-semana4Content.style.display = "block";
+semana4Content.style.display = "none";
 
 // JS Events
 navHome.addEventListener("click", () => {
