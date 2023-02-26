@@ -53,8 +53,8 @@ export class Conta {
     }
   }
 
-  imprimirExtrato() {
-    let results = `\n Banco Poupancito  \n`;
+  imprimirExtrato(title) {
+    let results = `\n ${title} \n`;
     results += `================================= \n`;
     this.operacoes.forEach((item) => {
       results += `* ${item.operacao} | R$ ${item.valor} | R$ ${item.saldo}\n`;
