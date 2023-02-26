@@ -6,9 +6,9 @@ const semana3Content = document.querySelector("#semana3Content");
 const semana4Content = document.querySelector("#semana4Content");
 
 semana3Button.addEventListener("click", () => {
-  home.style.display = "none";
+  home.style.display = "block";
   semana4Content.style.display = "none";
-  semana3Content.style.display = "block";
+  semana3Content.style.display = "none";
 });
 
 semana4Button.addEventListener("click", () => {
