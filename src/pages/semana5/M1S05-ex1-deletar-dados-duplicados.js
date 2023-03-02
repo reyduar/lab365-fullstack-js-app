@@ -24,6 +24,7 @@ const removeDuplicateItems = (list) => {
   return `${duplicateNames.join(", ")}, [${uniqueNames}]`;
 };
 
-console.log("==[M1S05] Ex 1 - Função deletar dados duplicados==");
+console.log("====================================================");
+console.log("== [M1S05] Ex 1 - Função deletar dados duplicados ==");
 console.log(removeDuplicateItems(arrNames));
-console.log("================================================");
+console.log("====================================================");
