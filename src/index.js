@@ -8,3 +8,4 @@ import "./components/header/header";
 import "./pages/home/home";
 import "./pages/semana3";
 import "./pages/semana4";
+import "./pages/semana5";
