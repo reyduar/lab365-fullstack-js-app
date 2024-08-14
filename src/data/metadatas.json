@@ -1,0 +1,26 @@
+[
+  {
+    "documento_id": "038c22c2-1f18-441a-a74a-da4278108501",
+    "documento_nombre": "INFORME SOBRE REQUERIMIENTO SGD LOTERÍA",
+    "metadatas": [
+      { "nombre": "fecha_de_nacimiento", "data": "2024-07-24" },
+      { "nombre": "año", "data": "2024" }
+    ]
+  },
+  {
+    "documento_id": "239aa3b5-09c3-4627-bf6d-3bb1b0d94b52",
+    "documento_nombre": "INFORME REQUERIMIENTO SGD LOTERIA",
+    "metadatas": [
+      { "nombre": "fecha_de_nacimiento", "data": "2024-07-24" },
+      { "nombre": "año", "data": "2023" }
+    ]
+  },
+  {
+    "documento_id": "5a8d5f73-9acc-4b33-88d5-54c8a946ed93",
+    "documento_nombre": "INFORME REQUERIMIENTO SGD LOTERIA",
+    "metadatas": [
+      { "nombre": "fecha_de_nacimiento", "data": "2024-07-23" },
+      { "nombre": "año", "data": "2024" }
+    ]
+  }
+]
